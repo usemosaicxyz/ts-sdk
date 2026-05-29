@@ -44,7 +44,14 @@ jobs:
             npm publish
           fi
 
+      - uses: actions/setup-node@v4
+        if: ${{ secrets.NPM_TOKEN != '' }}
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
       - name: Publish to npmjs
+        if: ${{ secrets.NPM_TOKEN != '' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
