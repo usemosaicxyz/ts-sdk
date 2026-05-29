@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@usemosaicxyz/ts-sdk",
+      "name": "@usemosiac/ts-sdk",
       "devDependencies": {
         "typescript": "^5",
       },

@@ -1,5 +1,5 @@
 {
-  "name": "@usemosaicxyz/ts-sdk",
+  "name": "@usemosiac/ts-sdk",
   "version": "0.1.0",
   "description": "TypeScript SDK for Mosaic bounty contracts on Base and the Mortar API",
   "type": "module",

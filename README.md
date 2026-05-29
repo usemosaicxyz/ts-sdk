@@ -1,11 +1,11 @@
-# @usemosaicxyz/ts-sdk
+# @usemosiac/ts-sdk
 
 TypeScript SDK for [Mosaic](https://usemosaic.xyz) bounty contracts on Base and the Mortar indexer API.
 
 ## Install
 
 ```bash
-npm install @usemosaicxyz/ts-sdk
+npm install @usemosiac/ts-sdk
 ```
 
 ## Quick start
@@ -15,7 +15,7 @@ npm install @usemosaicxyz/ts-sdk
 Build calldata for your wallet (EIP-1193, WalletConnect, etc.). The SDK does not sign or broadcast.
 
 ```ts
-import { createMosaicSdk, metadataToDataUri } from "@usemosaicxyz/ts-sdk";
+import { createMosaicSdk, metadataToDataUri } from "@usemosiac/ts-sdk";
 
 const sdk = createMosaicSdk({
   contractAddress: "0x0c7fad7C9bBaD0BE62aAc867c6069d7Aad7Cb361",
@@ -41,7 +41,7 @@ const createTx = sdk.createBounty({
 ### Mortar API (read-only)
 
 ```ts
-import { createMosaicApiClient } from "@usemosaicxyz/ts-sdk";
+import { createMosaicApiClient } from "@usemosiac/ts-sdk";
 
 const api = createMosaicApiClient({
   baseUrl: "https://your-mortar-api.example",
@@ -71,7 +71,7 @@ Override `chainId`, `contractAddress`, and `usdcAddress` in `createMosaicSdk` fo
 Canonical JSON for stable hashing:
 
 ```ts
-import { canonicalJson, metadataToDataUri, parseMetadataUri } from "@usemosaicxyz/ts-sdk";
+import { canonicalJson, metadataToDataUri, parseMetadataUri } from "@usemosiac/ts-sdk";
 
 const uri = metadataToDataUri({ version: 1, title: "...", brief: "..." });
 const parsed = parseMetadataUri(uri);
@@ -82,7 +82,7 @@ const parsed = parseMetadataUri(uri);
 ## Quoting create cost
 
 ```ts
-import { quoteCreateAmount } from "@usemosaicxyz/ts-sdk";
+import { quoteCreateAmount } from "@usemosiac/ts-sdk";
 
 const { rewardAmount, bondAmount, feeAmount, totalAmount } = quoteCreateAmount(25_000_000);
 // totalAmount is what the poster pays (reward + post fee); bond is separate per contract rules
