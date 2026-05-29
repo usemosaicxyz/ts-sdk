@@ -1,11 +1,25 @@
-# @usemosiac/ts-sdk
+# @usemosaicxyz/ts-sdk
 
-TypeScript SDK for [Mosaic](https://usemosaic.xyz) bounty contracts on Base and the Mortar indexer API.
+TypeScript SDK for [Mosaic](https://usemosaic.xyz) bounty contracts on Base and the Mortar API.
 
 ## Install
 
+**npm (recommended for most apps):**
+
 ```bash
 npm install @usemosiac/ts-sdk
+```
+
+**GitHub Packages** (linked to this repo; scope must match the GitHub org):
+
+```bash
+npm install @usemosaicxyz/ts-sdk --registry=https://npm.pkg.github.com
+```
+
+Add to `.npmrc`:
+
+```
+@usemosaicxyz:registry=https://npm.pkg.github.com
 ```
 
 ## Quick start
@@ -15,7 +29,7 @@ npm install @usemosiac/ts-sdk
 Build calldata for your wallet (EIP-1193, WalletConnect, etc.). The SDK does not sign or broadcast.
 
 ```ts
-import { createMosaicSdk, metadataToDataUri } from "@usemosiac/ts-sdk";
+import { createMosaicSdk, metadataToDataUri } from "@usemosiac/ts-sdk"; // or @usemosaicxyz/ts-sdk from GitHub Packages
 
 const sdk = createMosaicSdk({
   contractAddress: "0x0c7fad7C9bBaD0BE62aAc867c6069d7Aad7Cb361",
@@ -106,16 +120,19 @@ Each tx method returns a `WalletTx`: `{ chainId, to, data, value }`.
 
 ## Releases
 
-Published as [`@usemosiac/ts-sdk`](https://www.npmjs.com/package/@usemosiac/ts-sdk) on npm. GitHub [releases](https://github.com/usemosaicxyz/ts-sdk/releases) are tagged `v*` (e.g. `v0.1.0`) and match `package.json` version.
+| Registry | Package |
+|----------|---------|
+| [npm](https://www.npmjs.com/package/@usemosiac/ts-sdk) | `@usemosiac/ts-sdk` |
+| [GitHub Packages](https://github.com/usemosaicxyz/ts-sdk/packages) | `@usemosaicxyz/ts-sdk` |
 
-To ship a new version: bump `version` in `package.json`, commit, tag, and push:
+GitHub [releases](https://github.com/usemosaicxyz/ts-sdk/releases) use tags `v*` matching `package.json` `version`.
 
 ```bash
-git tag v0.1.1
-git push origin v0.1.1
+# bump version in package.json, commit, then:
+git tag v0.1.1 && git push origin v0.1.1
 ```
 
-The release workflow publishes to npm (requires `NPM_TOKEN` repo secret) and creates a GitHub Release.
+The release workflow publishes to **GitHub Packages** (`GITHUB_TOKEN`) and **npmjs** (`NPM_TOKEN` secret), then creates a GitHub Release.
 
 ## License
 
