@@ -104,6 +104,19 @@ const { rewardAmount, bondAmount, feeAmount, totalAmount } = quoteCreateAmount(2
 
 Each tx method returns a `WalletTx`: `{ chainId, to, data, value }`.
 
+## Releases
+
+Published as [`@usemosiac/ts-sdk`](https://www.npmjs.com/package/@usemosiac/ts-sdk) on npm. GitHub [releases](https://github.com/usemosaicxyz/ts-sdk/releases) are tagged `v*` (e.g. `v0.1.0`) and match `package.json` version.
+
+To ship a new version: bump `version` in `package.json`, commit, tag, and push:
+
+```bash
+git tag v0.1.1
+git push origin v0.1.1
+```
+
+The release workflow publishes to npm (requires `NPM_TOKEN` repo secret) and creates a GitHub Release.
+
 ## License
 
 MIT
